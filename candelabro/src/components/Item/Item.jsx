@@ -1,18 +1,21 @@
 import { Card, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const Item = ({ id, nombre, precio, desc, img}) => {
+const Item = ({ id, nombre, precio, shortDesc, img}) => {
   return (
     <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
             <Card.Title>{nombre}</Card.Title>
             <Card.Text>
-                Precio: {precio}
+                Precio: ${precio}
             </Card.Text>
             <Card.Text>
-                Descripción: {desc}
+              {shortDesc}
             </Card.Text>
-            <Button variant="primary">Ver más</Button>
+            <Link to={`/detalle/${id}`}>
+              <Button variant="primary">Ver más</Button>
+            </Link>
         </Card.Body>
     </Card>
     
