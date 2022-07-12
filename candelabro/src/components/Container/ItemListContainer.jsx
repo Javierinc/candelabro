@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemList from "../ItemList/ItemList"
 import { gFetch } from "../../helpers/getFetch"
-import { Spinner } from "react-bootstrap"
+
 
 
 const ItemListContainer = () => {
@@ -29,9 +29,7 @@ const ItemListContainer = () => {
   return (
     <>  
       
-      {cargando ? <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
+      {cargando ? <h1>Cargando...</h1>
         :
         <ItemList productos ={productos}/>}
     </>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { gFetch } from "../../helpers/getFetch"
 
-import { Spinner } from "react-bootstrap"
+
 
 
 const ItemDetailContainer = () => {
@@ -28,9 +28,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>  
-        {cargando ? <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        {cargando ? <h1>Cargando...</h1>
         :
         <ItemDetail {...item}/>}
     </>

@@ -1,21 +1,40 @@
-import { Link, NavLink } from 'react-router-dom'
-import { Navbar, Nav, Container } from 'react-bootstrap'
-import CartWidget from '../CartWidget/CartWidget'
 
-
-const NavBar = () => {
+import { NavbarContainer, NavbarWrapper, IconLogo, Menu, MenuItem, MenuItemLink, IconLogoMobile } from './Navbar.elemenst'
+import { GiLitCandelabra } from "react-icons/gi";
+import { FaBars, FaTimes} from "react-icons/fa";
+import { useState } from 'react';
+import CartWidget from '../CartWidget/CartWidget';
+const Nabvar = () => {
+    const [click, setClick] = useState(false)
+    
+    const ChangeClick = ( ) => {
+        setClick(!click)
+    }
   return (
-    <Navbar bg="light" variant="light">
-      <Container>
-      <NavLink to='/'>Candelabro</NavLink>
-      <Nav className="me-auto">
-        <Link to='/productos/velas'>Velas</Link>
-        <Link to='/productos/decoracion'>Decoración</Link>
-      </Nav>
-      <CartWidget/>
-      </Container>
-    </Navbar>
+    <>
+        <NavbarContainer>
+            <NavbarWrapper>
+                <IconLogo to='/'> <GiLitCandelabra size={"2em"}/>Candelabro</IconLogo>
+                <IconLogoMobile onClick={()=> ChangeClick()}>
+                    { click ? <FaTimes/>: <FaBars/>}
+                </IconLogoMobile>
+                <Menu click = {click}>
+                    <MenuItem onClick={()=> ChangeClick()}>
+                        <MenuItemLink to='/productos/velas'>Velas</MenuItemLink>
+                    </MenuItem>
+                    <MenuItem onClick={()=> ChangeClick()}>
+                        <MenuItemLink to='/productos/decoracion'>Decoración</MenuItemLink>
+                    </MenuItem>
+                    <MenuItem onClick={()=> ChangeClick()}>
+                        <MenuItemLink to='/productos/inciensos'>Inciensos</MenuItemLink>
+                    </MenuItem>
+                    
+                </Menu>
+                <CartWidget/>
+            </NavbarWrapper>
+        </NavbarContainer>
+    </>
   )
 }
 
-export default NavBar
+export default Nabvar

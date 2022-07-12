@@ -1,14 +1,16 @@
 import Item from "../Item/Item"
+import { CardContainer, SectionContainer, SectionHeading } from "./ItemList.elements"
 
-const ItemList = ( {productos} ) => {
+const ItemList = ( {productos}) => {
     
   return (
-    <div>
-        <h2>Catálogo de productos</h2>
-        <div className='row'>
-            {productos.map( (prod) => <Item key={prod.id} {...prod}/>)}
-        </div>
-    </div>
+    <SectionContainer>
+      <SectionHeading>Catálogo</SectionHeading>
+        <CardContainer>
+        {productos.map( (prod) => <Item key={prod.id} {...prod}/>)}
+        </CardContainer>
+    </SectionContainer>
+
   )
 }
 
