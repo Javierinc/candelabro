@@ -18,6 +18,11 @@ export const NavbarWrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media screen and (max-width: 960px){
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-left: 1rem;
+    }
 
 `
 export const IconLogo = styled(Link)`
@@ -25,7 +30,7 @@ export const IconLogo = styled(Link)`
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #6b696b;
     text-decoration: none;
@@ -73,6 +78,7 @@ export  const MenuItem = styled.li`
 `
 export const MenuItemLink = styled(Link)`
     text-decoration: none;
+    font-size: 1.5rem;
     color: #6b696b;
     font-weight: bold;
     &:hover{

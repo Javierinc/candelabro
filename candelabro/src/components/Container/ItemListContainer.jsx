@@ -1,35 +1,39 @@
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemList from "../ItemList/ItemList"
-import { gFetch } from "../../helpers/getFetch"
+import {collection, getDocs, query, where} from 'firebase/firestore'
+import Loading from "../Spinner/Loading"
+import { db } from "../../firebase/config"
 
 
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
-
+ 
   const { categoriaId } = useParams();
-  
 
   useEffect(()=>{
-    gFetch
-    .then(data => {
-      if(categoriaId) {
-        setProductos( data.filter((el)=> el.categoria === categoriaId))
-      } else {
-        setProductos(data)
-      }
-
-    })
-    .catch(err => console.log(err))
-    .finally(() => setCargando(false))
+    const productosReferencia = collection(db, 'productos')
+    const queryProductos = categoriaId ? query(productosReferencia, where("categoria", "==", categoriaId)) : productosReferencia
+    getDocs(queryProductos)
+      .then((resp) => {
+        setProductos(resp.docs.map((doc)=> { 
+          return {
+            id: doc.id, 
+            ...doc.data()
+          }
+        }))
+        
+      })
+      .catch(err => console.log(err))
+      .finally(()=>setCargando(false))
   }, [categoriaId])
 
   return (
     <>  
       
-      {cargando ? <h1>Cargando...</h1>
+      {cargando ? <Loading/>
         :
         <ItemList productos ={productos}/>}
     </>

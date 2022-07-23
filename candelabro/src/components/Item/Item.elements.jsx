@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-
-export const CardContainer = styled.div`
+import { Link } from "react-router-dom";
+export const CardContainer = styled(Link)`
     min-width: 300px;
     display: flex;
     flex-direction: column;
@@ -8,6 +8,17 @@ export const CardContainer = styled.div`
     padding: 1rem;
     background-color: #EFF4F8;
     border-radius: 5px;
+    // box-shadow: 0 0 3px 3px rgba(224, 224, 224, 0.7);
+    &:link, &:visited,  &:hover, &:active
+    {
+        color: #000000;
+        text-decoration: none;
+    }
+    &:hover {
+        box-shadow: 0 0 20px 10px rgba(224, 224, 224, 0.9);
+        transition: 0.2s ease-in;
+        background-color: #EFF1F8;
+    }
 
 `
 export const ProductImage = styled.img`

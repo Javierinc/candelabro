@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import ItemListContainer from './components/Container/ItemListContainer'
 import ItemDetailContainer from './components/Container/ItemDetailContainer'
@@ -7,7 +5,6 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import  {CarritoProvider}  from './components/context/CartContext'
 import  Cart  from './components/Cart/Cart'
-
 function App() {
 
 

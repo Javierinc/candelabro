@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const SectionInvoice = styled.section`
     margin-top: 3rem;
     display: flex;
@@ -87,4 +87,20 @@ export const BuyButton = styled.button`
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+`
+
+export const ButtonProducts = styled(Link)`
+    text-decoration: none;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #d1b771;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    &:hover{
+        background-color: #b0954d;
+        transition: 0.3s all ease-in;
+    }
 `

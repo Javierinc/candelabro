@@ -22,6 +22,12 @@ export const DetailWrap = styled.div`
     border-radius: 5px;
     gap: 2rem;
     margin-top: 2rem;
+    
+    @media screen and (max-width: 960px){
+        padding-block: 1rem;
+        width: 90%;
+        margin-inline: auto;
+    }
 `
 export const DetailContainer = styled.div`
     display: flex;

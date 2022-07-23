@@ -1,13 +1,20 @@
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
-import { SectionInvoice, ContainerInvoice, HeadingSection, WrapperInvoice, ItemInvoice, ItemDetailInvoice, TrashButtonItem, ContainerButtons, CleanButton, BuyButton, NameProduct, NumberProducts, PriceProduct, TotalPrice } from './Cart.elements'
+import { SectionInvoice, ContainerInvoice, HeadingSection, WrapperInvoice, ItemInvoice, ItemDetailInvoice, TrashButtonItem, ContainerButtons, CleanButton, BuyButton, NameProduct, NumberProducts, PriceProduct, TotalPrice, ButtonProducts } from './Cart.elements'
 import { FaTrash } from 'react-icons/fa';
+
+
 const Cart = () => {
 
 
-    const { carrito, totalCompra, limpiarCarrito, eliminarProducto } = useContext(CartContext)
-
-
+    const { carrito, totalCompra, limpiarCarrito, eliminarProducto, cantidad, setCantidad } = useContext(CartContext)
+    
+    if(carrito.length === 0){
+        return <SectionInvoice>
+                    <HeadingSection>No hay productos en tu carrito</HeadingSection>
+                    <ButtonProducts to='/'>Ver productos</ButtonProducts>
+               </SectionInvoice>
+    }
   return (
 
     <SectionInvoice>
@@ -42,22 +49,6 @@ const Cart = () => {
         </ContainerInvoice>
     </SectionInvoice>
 
-
-    // <div>
-    //   <h1>Detalle de tu compra</h1>
-    //   <hr />
-    //   {
-    //     carrito.map((item) => (
-    //         <div key={item.id}>
-    //             <h4>{item.nombre}</h4>
-    //             <p>Cantidad: {item.cantidad} </p>
-    //             <p>Precio: ${item.cantidad * item.precio}</p>
-    //         </div>
-    //     ))
-    //   }
-    //   <hr />
-    //   <h2>Total: ${totalCompra()}</h2>  
-    // </div>
   )
 }
 

@@ -9,7 +9,7 @@ export const SectionContainer = styled.section`
 export const SectionHeading = styled.h2`
     color: #8097A5;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: bold;
     text-align: center;
 `
 export const CardContainer = styled.div`
