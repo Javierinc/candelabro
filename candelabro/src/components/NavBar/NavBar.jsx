@@ -6,8 +6,7 @@ import { useState } from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 const Nabvar = () => {
     const [click, setClick] = useState(false)
-    
-    const ChangeClick = ( ) => {
+    const changeClick = ( ) => {
         setClick(!click)
     }
   return (
@@ -15,20 +14,19 @@ const Nabvar = () => {
         <NavbarContainer>
             <NavbarWrapper>
                 <IconLogo to='/'> <GiLitCandelabra size={"2em"}/>Candelabro</IconLogo>
-                <IconLogoMobile onClick={()=> ChangeClick()}>
+                <IconLogoMobile onClick={()=> changeClick()}>
                     { click ? <FaTimes/>: <FaBars/>}
                 </IconLogoMobile>
                 <Menu click = {click}>
-                    <MenuItem onClick={()=> ChangeClick()}>
+                    <MenuItem onClick={()=> changeClick()}>
                         <MenuItemLink to='/productos/velas'>Velas</MenuItemLink>
                     </MenuItem>
-                    <MenuItem onClick={()=> ChangeClick()}>
+                    <MenuItem onClick={()=> changeClick()}>
                         <MenuItemLink to='/productos/decoracion'>Decoración</MenuItemLink>
                     </MenuItem>
-                    <MenuItem onClick={()=> ChangeClick()}>
+                    <MenuItem onClick={()=> changeClick()}>
                         <MenuItemLink to='/productos/inciensos'>Inciensos</MenuItemLink>
-                    </MenuItem>
-                    
+                    </MenuItem>       
                 </Menu>
                 <CartWidget/>
             </NavbarWrapper>

@@ -1,14 +1,16 @@
 import Item from "../Item/Item"
 import {useParams} from "react-router-dom"
 import { CardContainer, SectionContainer, SectionHeading } from "./ItemList.elements"
+import { generateTitle } from "../../utils/generalFunctions";
 
-const ItemList = ( {productos}) => {
-  const { categoriaId } = useParams();  
+const ItemList = ( {products}) => {
+  const { categoryId } = useParams();
+  generateTitle(`CANDELABRO - ${categoryId ? categoryId.toUpperCase() : "FIND PEACE"}`)  
   return (
     <SectionContainer>
-      <SectionHeading>CATALOGO {categoriaId ? categoriaId.toUpperCase() : categoriaId}</SectionHeading>
+      <SectionHeading>CATALOGO {categoryId ? categoryId.toUpperCase() : categoryId}</SectionHeading>
         <CardContainer>
-        {productos.map( (prod) => <Item key={prod.id} {...prod}/>)}
+        {products.map( (prod) => <Item key={prod.id} {...prod}/>)}
         </CardContainer>
     </SectionContainer>
 

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DetailSection = styled.section`
+    height: 100%;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -22,6 +23,7 @@ export const DetailWrap = styled.div`
     border-radius: 5px;
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
     
     @media screen and (max-width: 960px){
         padding-block: 1rem;

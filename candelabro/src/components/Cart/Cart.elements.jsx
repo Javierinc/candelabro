@@ -8,6 +8,7 @@ export const SectionInvoice = styled.section`
     align-items: center;
     gap: 2rem;
 `
+
 export const HeadingSection = styled.h1`
     font-size: 1.4rem;
     font-weight: bold;
@@ -65,7 +66,8 @@ export const TrashButtonItem = styled.button`
 export const ContainerButtons = styled.div`
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-end;
+
 `
 
 export const CleanButton = styled.button`
@@ -78,7 +80,7 @@ export const CleanButton = styled.button`
     font-weight: bold;
     cursor: pointer;
 `
-export const BuyButton = styled.button`
+export const BuyButton = styled(Link)`
     background-color: #2f7d6c;
     border: none;
     padding: .5rem;
@@ -87,6 +89,8 @@ export const BuyButton = styled.button`
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    min-width: 10rem;
 `
 
 export const ButtonProducts = styled(Link)`

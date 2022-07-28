@@ -1,32 +1,19 @@
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
-
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Loading from "../Spinner/Loading"
-import { db } from "../../firebase/config"
-import { doc, getDoc } from "firebase/firestore"
+import { getFetchFirestore } from "../../firebase/fetchFirestore"
 
-
-const ItemDetailContainer = () => {
-    
-    const [cargando, setCargando] = useState(false);
-    const [item, setItem] = useState(null);
-  
+const ItemDetailContainer = () => {  
+    const [loading, setLoading] = useState(true)
+    const [item, setItem] = useState(null)
     const { itemId } = useParams()
-
     useEffect(()=>{
-      const productoReferencia = doc(db, 'productos', itemId)
-      getDoc(productoReferencia)
-        .then((doc)=>{
-          setItem({id: doc.id, ...doc.data()})
-        })
-        .catch(err => console.log(err))
-        .finally(()=> setCargando(false))
-        
+      getFetchFirestore(itemId, setItem, setLoading) 
     }, [])   
   return (
     <>  
-        {cargando ? <Loading/>
+        {loading ? <Loading/>
         :
         <ItemDetail {...item}/>}
     </>

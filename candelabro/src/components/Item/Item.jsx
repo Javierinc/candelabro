@@ -2,14 +2,14 @@ import { CardContainer, ProductDesc, ProductImage, ProductName, ProductPrice } f
 
 
 
-const Item = ({ id, nombre, precio, resumen, img }) => {
+const Item = ({ id, name, price, shortDesc, image }) => {
   return (
     <CardContainer to={`/detalle/${id}`}>
-        <ProductImage src={img} alt={nombre}/>
-        <ProductPrice>${precio}</ProductPrice>
-        <ProductName>{nombre}</ProductName>
+        <ProductImage src={image} alt={name}/>
+        <ProductPrice>${price}</ProductPrice>
+        <ProductName>{name}</ProductName>
         <ProductDesc>
-            {resumen}
+            {shortDesc}
         </ProductDesc>
     </CardContainer>
   )

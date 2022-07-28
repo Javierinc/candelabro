@@ -21,7 +21,7 @@ export const NavbarWrapper = styled.div`
     @media screen and (max-width: 960px){
         flex-direction: row-reverse;
         justify-content: flex-end;
-        margin-left: 1rem;
+        padding-left: 1rem;
     }
 
 `

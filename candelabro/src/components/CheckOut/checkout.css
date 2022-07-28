@@ -1,0 +1,124 @@
+.checkOut{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 2rem;
+  width: 80%;
+  margin-inline: auto;  
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.error{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: red;
+}
+
+.buyForm {
+    width: 400px;
+}
+
+@media screen and (max-width: 960px){
+    .buyForm{
+        width: 300px;
+    }
+}
+.container {
+    background-color: aqua;
+}
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    height: 2.2rem;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6b696b;
+}
+
+.submitButton {
+    margin-top: 2rem;
+    width: 100%;
+    height: 2.5rem;
+    background-color: green;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.submitButton:hover{
+
+    background-color: rgba(24, 165, 24, 0.881);
+}
+.headingCheckout{
+
+    text-align: center;
+    color: #6b696b;
+}
+
+    
+.finishContainer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 2rem;
+    width: 80%;
+    margin-inline: auto; 
+}
+
+.containerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+}
+
+#headingInfo {
+    font-size: 1.4rem;
+}
+
+#orderId{
+    font-size: 1.2rem;
+}
+
+.returnButton {
+    text-decoration: none;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #d1b771;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+   
+}
+
+.returnButton:hover{
+    background-color: #b0954d;
+    transition: 0.3s all ease-in;
+}

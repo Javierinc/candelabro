@@ -1,22 +1,21 @@
-
 import { ButtonAdd, ButtonSubtrac, ContainerCounter, CounterSpan } from './ItemCount.elements'
 
 const ItemCount = ({ max, min=1, counter, setCounter }) => {
 
 
-  const handleSuma = () => {
+  const handleSum = () => {
     counter < max && setCounter(counter + 1)
   }
-  const handleResta = () => {
+  const handleSubtraction = () => {
     counter > min && setCounter(counter - 1)
   }
 
 
   return (
     <ContainerCounter>
-        <ButtonSubtrac onClick={handleResta}>-</ButtonSubtrac>
+        <ButtonSubtrac onClick={handleSubtraction}>-</ButtonSubtrac>
         <CounterSpan>{counter}</CounterSpan>
-        <ButtonAdd onClick={handleSuma}>+</ButtonAdd>
+        <ButtonAdd onClick={handleSum}>+</ButtonAdd>
     </ContainerCounter>
   )
 }

@@ -3,16 +3,16 @@ import { CartContext } from "../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
 import { DetailContainer, DetailDesc, DetailDescWrap, DetailHeading, DetailImg, DetailImgWrap, DetailPrice, DetailSection, DetailProductHeading, DetailStock, DetailWrap, ButtonAddCart, ButtonBuy, ButtonContinue } from "./ItemDetail.elements"
 
-const ItemDetail = ({id, nombre, img, desc, precio, stock}) => {
+const ItemDetail = ({id, name, image, description, price, stock}) => {
   
   
 
-  const { agregarAlCarrito, estaEnElCarrito, cantidad, setCantidad } = useContext(CartContext)
+  const { addToCart, isInCart, quantity, setQuantity } = useContext(CartContext)
 
-  const handleAgregarCarrito = () => {
-      const agregarItem = {id, nombre, precio, stock, cantidad}
-      agregarAlCarrito(agregarItem)
-      setCantidad(1)
+  const handleAddToCart = () => {
+      const addItem = {id, name, price, stock, quantity}
+      addToCart(addItem)
+      setQuantity(1)
   }
    
     return (
@@ -21,25 +21,25 @@ const ItemDetail = ({id, nombre, img, desc, precio, stock}) => {
           <DetailWrap>
           <DetailContainer>
             <DetailImgWrap>
-              <DetailImg src={img} alt={nombre}/>
+              <DetailImg src={image} alt={name}/>
             </DetailImgWrap>
             <DetailDescWrap>
-              <DetailProductHeading>{nombre}</DetailProductHeading>
-              <DetailPrice>${precio}</DetailPrice>
+              <DetailProductHeading>{name}</DetailProductHeading>
+              <DetailPrice>${price}</DetailPrice>
               <DetailStock>Stock del producto: {stock} unidades.</DetailStock>
-              <DetailDesc>{desc}</DetailDesc>
+              <DetailDesc>{description}</DetailDesc>
             </DetailDescWrap>
           </DetailContainer>
-          { estaEnElCarrito(id) 
+          { isInCart(id) 
             ? <> 
-                <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
-                <ButtonAddCart onClick={handleAgregarCarrito}>Agregar al carrito</ButtonAddCart>
-                <ButtonBuy to='/carrito'>Ver mi carrito</ButtonBuy>
+                <ItemCount max={stock} counter={quantity} setCounter={setQuantity}/>
+                <ButtonAddCart onClick={handleAddToCart}>Agregar al carrito</ButtonAddCart>
+                <ButtonBuy to='/cart'>Ver mi carrito</ButtonBuy>
               </>
             :
             <>
-              <ItemCount max={stock} counter={cantidad} setCounter={setCantidad}/>
-              <ButtonAddCart onClick={handleAgregarCarrito}>Agregar al carrito</ButtonAddCart>
+              <ItemCount max={stock} counter={quantity} setCounter={setQuantity}/>
+              <ButtonAddCart onClick={handleAddToCart}>Agregar al carrito</ButtonAddCart>
             </>}
 
           </DetailWrap>

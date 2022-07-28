@@ -7,12 +7,12 @@ import { CartWidgetLink, CartWidgetTotal } from "./CartWidget.elements";
 
 const CartWidget = () => {
   
-  const {carrito, cantidadEnCarrito} = useContext(CartContext)
+  const {cart, quantityInCart} = useContext(CartContext)
 
   return (
-    <CartWidgetLink to='/carrito' >
+    <CartWidgetLink to='/cart' >
         <HiShoppingCart size={"1.2em"}/>
-        <CartWidgetTotal style={{display: carrito.length === 0 ? "none" : "inline" }}>{cantidadEnCarrito()}</CartWidgetTotal>
+        <CartWidgetTotal style={{display: cart.length === 0 ? "none" : "inline" }}>{quantityInCart()}</CartWidgetTotal>
     </CartWidgetLink>
   )
 }

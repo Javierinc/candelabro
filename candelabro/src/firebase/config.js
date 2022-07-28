@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAC-DqTnGKaBmZratY9elXM6NrNzYnG_Kg",
-  authDomain: "candelabro-eed1b.firebaseapp.com",
-  projectId: "candelabro-eed1b",
-  storageBucket: "candelabro-eed1b.appspot.com",
-  messagingSenderId: "884319192056",
-  appId: "1:884319192056:web:982c5e829662a700328c0d"
+  apiKey: "AIzaSyBFqDJgdxiimawLhJFNLKsr1aG6MQyrBJA",
+  authDomain: "candelabroecommerce.firebaseapp.com",
+  projectId: "candelabroecommerce",
+  storageBucket: "candelabroecommerce.appspot.com",
+  messagingSenderId: "541932937548",
+  appId: "1:541932937548:web:ca03372653259dab5e2fe9"
 };
 
 // Initialize Firebase
